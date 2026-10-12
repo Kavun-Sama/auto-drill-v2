@@ -1,7 +1,19 @@
-# Auto Drill
+<p align="center">
+  <img src="showcase/logo.svg" alt="Auto Drill logo" width="128">
+</p>
 
-[![GitHub all releases](https://img.shields.io/github/downloads/Pointifix/AutoDrill/total)](https://github.com/Pointifix/AutoDrill/releases)
-![GitHub Repo stars](https://img.shields.io/github/stars/Pointifix/AutoDrill?style=social)
+<h1 align="center">Auto Drill</h1>
+
+<p align="center">
+  <a href="https://github.com/Kavun-Sama/auto-drill-v2/actions/workflows/commitTest.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Kavun-Sama/auto-drill-v2/commitTest.yml?branch=master&label=build"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/Kavun-Sama/auto-drill-v2"></a>
+  <img alt="Mindustry" src="https://img.shields.io/badge/Mindustry-v8%20build%20160.7-F5A623">
+  <a href="https://github.com/Kavun-Sama/auto-drill-v2/commits/master"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Kavun-Sama/auto-drill-v2"></a>
+</p>
+
+<p align="center">
+  Fork of <a href="https://github.com/Pointifix/AutoDrill">Pointifix/AutoDrill</a> updated for Mindustry v8 build 160.7.
+</p>
 
 Mindustry Mod which adds tools to automatically fill a resource patch with drills.
 
