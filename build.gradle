@@ -15,7 +15,7 @@ repositories{
 
 ext{
     //the build number that this mod is made for
-    mindustryVersion = 'v158.1'
+    mindustryVersion = 'v160.7'
     jabelVersion = "93fde537c7"
     isWindows = System.getProperty("os.name").toLowerCase().contains("windows")
     sdkRoot = System.getenv("ANDROID_HOME") ?: System.getenv("ANDROID_SDK_ROOT")
@@ -31,6 +31,13 @@ allprojects{
 java{
     targetCompatibility = 8
     sourceCompatibility = JavaVersion.VERSION_17
+}
+
+// Mindustry 160+ ships Java 17 class files; the mod itself is still emitted as Java 8 bytecode (--release 8).
+[configurations.compileClasspath, configurations.runtimeClasspath].each{ configuration ->
+    configuration.attributes{
+        attribute(org.gradle.api.attributes.java.TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+    }
 }
 
 dependencies{

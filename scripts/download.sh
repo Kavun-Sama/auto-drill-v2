@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 TEST_DIR="$PROJECT_DIR/test-env"
-MINDUSTRY_VERSION="v158.1"
+MINDUSTRY_VERSION="v160.7"
 MINDUSTRY_JAR="$TEST_DIR/Mindustry.jar"
 
 if [ -f "$MINDUSTRY_JAR" ]; then
