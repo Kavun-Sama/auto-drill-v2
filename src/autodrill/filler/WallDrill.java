@@ -66,7 +66,10 @@ public class WallDrill {
                 }
             }
         }
-        if (boreTiles.isEmpty()) return;
+        if (boreTiles.isEmpty()) {
+            notifyNoPlacement();
+            return;
+        }
 
         // --- Phase 2: compute duct tile positions ---
         Seq<Tile> ductTiles = new Seq<>();
@@ -80,7 +83,10 @@ public class WallDrill {
                 ductTiles.add(ductTile);
             }
         }
-        if (ductTiles.isEmpty()) return;
+        if (ductTiles.isEmpty()) {
+            notifyNoPlacement();
+            return;
+        }
 
         // --- Phase 3: build connecting duct network ---
         Tile outerMostDuctTile = ductTiles
@@ -231,14 +237,26 @@ public class WallDrill {
         }
     }
 
+    private static void notifyNoPlacement() {
+        if (Vars.ui != null) Vars.ui.showInfoToast(bundle.get("auto-drill.no-placement"), 4f);
+    }
+
     private static Seq<Tile> getConnectedWallTiles(Tile tile, Direction direction) {
         Queue<Tile> queue = new Queue<>();
         Seq<Tile> tiles = new Seq<>();
         Seq<Tile> visited = new Seq<>();
 
-        queue.addLast(tile);
-
         Item sourceItem = tile.wallDrop();
+
+        // The clicked tile is often deeper inside the wall: move it towards the open side of the wall first,
+        // since only tiles exposed to the bores are followed below.
+        Tile start = tile;
+        for (Tile behind = start.nearby(-direction.p.x, -direction.p.y);
+             behind != null && behind.solid() && behind.wallDrop() == sourceItem;
+             behind = start.nearby(-direction.p.x, -direction.p.y)) {
+            start = behind;
+        }
+        queue.addLast(start);
 
         // Use mechanical drill settings as base, with 0.25x multiplier for wall tiles
         // Default to 200 if setting not found
