@@ -3,7 +3,7 @@ name: "auto-drill"
 author: "Pointifix"
 main: "autodrill.AutoDrill"
 description: "Adds tools for automatically filling resource patches with drills"
-version: "1.6.2"
+version: "1.6.3"
 minGameVersion: 160
 java: true
 hidden: true
