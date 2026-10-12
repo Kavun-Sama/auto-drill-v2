@@ -27,7 +27,7 @@ The laser and airblast drill buttons fill the resource patch with drills and pla
 
 ![](showcase/optimization-drill.gif)
 
-For Erekir the mod enables you to automatically fill wall resources
+For Erekir the mod fills the whole wall deposit with plasma bores, powers them with beam nodes and joins them with a duct line. The picked direction is the side the ducts leave on.
 
 ![](showcase/wall-drill.gif)
 
