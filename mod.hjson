@@ -1,9 +1,9 @@
-displayName: "AutoDrill"
+displayName: "AutoDrill V2"
 name: "auto-drill"
-author: "Pointifix"
+author: "Pointifix, Kavun-Sama"
 main: "autodrill.AutoDrill"
 description: "Adds tools for automatically filling resource patches with drills"
-version: "1.6.3"
+version: "1.6.4"
 minGameVersion: 160
 java: true
 hidden: true
